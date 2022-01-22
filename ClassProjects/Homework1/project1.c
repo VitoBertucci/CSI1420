@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-//23 - read three ints determines and prints largest and smallest
+/*23 - read three ints determines and prints largest and smallest
 
     //get three ints and store them
     int num1,num2,num3;
@@ -40,26 +40,53 @@ int main(void) {
         printf("large num is: %d\n", large);
         printf("small num is: %d\n", small);
     }
+*/
+
 
 //25 - print my initials in block letters down the page, each letter made out of that letter
+    printf(
 
-//29 - print integer equivalents of letters
+    "          vv\n"
+    "       vv\n"
+    "    vv\n"
+    " vv\n"
+    "    vv\n"
+    "       vv\n"
+    "          vv\n"
+    "            \n"                
+    "IIIIIIIII II\n"
+    "            \n"
+    "           T\n"
+    "           T\n"
+    "           T\n"
+    "TTTTTTTTTTTT\n"
+    "           T\n"
+    "           T\n"
+    "           T\n"
+    "            \n"
+    "OOOOOOOOOOOO\n"
+    "O          O\n"
+    "O          O\n"
+    "OOOOOOOOOOOO\n\n"
+    );
 
-    // //init char
-    // char c;
-    // //ask and store user char
-    // printf("Enter char to get int value for\n");
-    // scanf("%c", &c);
-    // //display char as int value
-    // printf("Int value of char: %d\n", c);
-//32 
-/*
-    BMI calculator
-        take (weight x 703)/ (height)^2
-        display normal BMI values for user:
-            Underweight: under 18.5
-            Normal: 18.5-24.9
-            Overweight: 25-29.9
-            Obese: 30 and over
+/*29 - print integer equivalents of letters
+
+    //init char
+    char c;
+    //ask and store user char
+    printf("Enter char to get int value for\n");
+    scanf("%c", &c);
+    //display char as int value
+    printf("Int value of char: %d\n", c);
+*/
+
+/*32 - BMI calculator
+    take (weight x 703)/ (height)^2
+    display normal BMI values for user:
+        Underweight: under 18.5
+        Normal: 18.5-24.9
+        Overweight: 25-29.9
+        Obese: 30 and over
 */
 }
