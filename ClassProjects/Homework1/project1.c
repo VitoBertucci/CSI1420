@@ -3,7 +3,6 @@
 int main(void) {
 /*23 - read three ints determines and prints largest and smallest
 
-    //get three ints and store them
     int num1,num2,num3;
     printf("Enter first number: \n");
     scanf("%d", &num1);
@@ -14,7 +13,6 @@ int main(void) {
 
     int large,small;
     
-    //get large and small of first and second num
     if(num1 < num2) {
         small = num1;
         large = num2;
@@ -26,14 +24,12 @@ int main(void) {
         small = num2;
     }
 
-    //num3 assignment according to large and small found above
     if(num3 > large) {
         large = num3;
     } else if(num3 < small) {
         small = num3;
     }
 
-    //display 
     if(num1 == num2 && num1 == num3) {
         printf("All three numbers are the same");
     } else {
@@ -42,8 +38,8 @@ int main(void) {
     }
 */
 
+/*25 - print my initials in block letters down the page, each letter made out of that letter
 
-//25 - print my initials in block letters down the page, each letter made out of that letter
     printf(
 
     "          vv\n"
@@ -69,24 +65,33 @@ int main(void) {
     "O          O\n"
     "OOOOOOOOOOOO\n\n"
     );
+*/
 
 /*29 - print integer equivalents of letters
 
-    //init char
     char c;
-    //ask and store user char
     printf("Enter char to get int value for\n");
     scanf("%c", &c);
-    //display char as int value
+
     printf("Int value of char: %d\n", c);
 */
 
 /*32 - BMI calculator
-    take (weight x 703)/ (height)^2
-    display normal BMI values for user:
-        Underweight: under 18.5
-        Normal: 18.5-24.9
-        Overweight: 25-29.9
-        Obese: 30 and over
+
+    int weight, height;
+    printf("Enter your weight in pounds:\n");
+    scanf("%d", &weight);
+    printf("Enter your height in inches:\n");
+    scanf("%d", &height);
+
+    printf(
+        "BMI Values:\n"
+        "Underweight: under 18.5\n"
+        "Normal: 18.5-24.9\n"
+        "Overweight: 25-29.9\n"
+        "Obese: 30 and over\n"
+        "-----------\n"
+        "Your BMI index: %f\n", (float)(weight*703)/(height*height)
+    );
 */
 }
