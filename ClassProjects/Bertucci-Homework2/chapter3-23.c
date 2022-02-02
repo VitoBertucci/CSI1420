@@ -35,13 +35,13 @@ int main (void) {
         //if number is greater than current largest, largest is current number (must be nonnegative)
         if(number < 0) {
             printf("Number must be a nonnegative int\n");
+            count--;
         } else if (number > largest){
             largest = number;
-            count++;
         }
+        count++;
     }
 
     //print largest
     printf("Largest number of set was: %d", largest);
-
 }

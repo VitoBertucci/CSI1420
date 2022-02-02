@@ -49,10 +49,12 @@ int main(void) {
         }
     }
 
-    //if user entered at least one tank, print tot avg mpg
+    //if user entered at least one tank:
     if(tankCount > 0) {
+        //print total avg mpg with totMiles/totGallons
         printf("The overall average miles/gallon was %f\n", (totMiles/totGallons));
     } else {
+        //inform user that must have at least one tank entered
         printf("Must enter at least one tank's information\n");
     }
 }

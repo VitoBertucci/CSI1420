@@ -36,5 +36,4 @@ int main(void) {
     //print binary num and decimal num
     printf("Binary number: %d \n", biNum);
     printf("Decimal number: %d", decNum); 
-
 }

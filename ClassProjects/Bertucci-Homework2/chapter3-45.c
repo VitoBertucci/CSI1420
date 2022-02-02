@@ -16,26 +16,33 @@ int main(void) {
     printf("Enter nonnegative integer to compute its factorial: \n");
     scanf("%d", &var);
 
-    //set a count for the integer since the integer value will be changing in the loop
-    varCount = var;
-    //set factorial of int to the int entered
-    factVar = var;
+    //if number is nonnegative:
+    if(var >= 0) {
+        //set a count for the integer since the integer value will be changing in the loop
+        varCount = var;
+        //set factorial of int to the int entered
+        factVar = var;
 
-    //while the count is less than the int entered (does not mult by 0)
-    while(count < varCount) {
+        //while the count is less than the int entered (does not mult by 0)
+        while(count < varCount) {
 
-        //set (n-1)
-        varMinusOne = (var -1);
-        //n = n * (n-1)
-        factVar *= varMinusOne;
-        //move to next number of n
-        var -= 1;
-        //update count
-        count++;
+            //set (n-1)
+            varMinusOne = (var -1);
+            //n = n * (n-1)
+            factVar *= varMinusOne;
+            //move to next number of n
+            var -= 1;
+            //update count
+            count++;
+        }
+
+        //print approximation
+        printf("%d! is approximately: %d \n", varCount,factVar);
+    } else {
+        //let user know variable must be nonnegative:
+        printf("Input number must be a nonnegative integer\n");
     }
-
-    //print 
-    printf("%d! is approximately: %d \n", varCount,factVar);
+    
     
 
 //45-b) estimate value of e with (1 + 1/n! + 1/n+1! + 1/n+2! + ... 1/n+C!) (n=1, C=input)
@@ -66,7 +73,7 @@ int main(void) {
     }
 
     //display approximation to 10 decimal places
-    printf("e is approximately: %.10f\n", approx);
+    printf("e with %d iterations of approximation: %.10f \n", (int)c, approx);
 
 
 //45-c) estimate value of e^x with (1 + x^i/i! + x^i+1/(i+1)! + x^i+2/(i+2)! + ... + x^p/p!)
@@ -100,5 +107,5 @@ int main(void) {
     }
 
     //print approx
-    printf("Approximate value of e^%d: %.10f", (int)x, value);
+    printf("Approximate value of e^%d with %d iterations of approximation: %.10f", (int)x, (int)p, value);
 }
