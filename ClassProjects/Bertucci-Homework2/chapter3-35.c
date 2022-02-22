@@ -1,39 +1,36 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(void) {
-/* 35 - printing decimal equivalent of binary number
-        -given a 5 or less digit binary number, translate it to base 10 number
-        -1101 = (1*1 + 0*2 + 1*4 + 1*8)
+/*
+35 - printing binary to decimal
+    1101 = (1*2^0) + (0*2^1) + (1*2^2) + (1*2^3)
+    1101 =   (1)   +   (0)   +   (4)   +   (8)  = 13
 */
 
     //init variables
-    int biNum, biRemainder;
-    int biBase = 1;
-    int decNum = 0;
-    int num;
-    int d1,d2,d3,d4,d5;
-
-    //prompt for binary number and store
-    printf("Enter binary number up to 5 digits: \n");
+    int num, r;
+    int decimal = 0;
+    
+    //prompt for binary number
+    printf("Enter binary number: \n");
     scanf("%d", &num);
 
-    //store in num variable
-    biNum = num;
+    //while number has digits, iterate through digits
+    for(int i = 0; num > 0; i++) {
+        
 
-    //while number is greater than zero (until out of digits)
-    while (num > 0)  
-        {  
-            //remainder of num/10 (101/10 = 10r1)
-            biRemainder = num % 10;
-            //decnum = (remainder * current base) + decnum
-            decNum = decNum + biRemainder * biBase;  
-            //move to next digit
-            num = num / 10; 
-            //increase base by power of 2
-            biBase = biBase * 2;  
+        //sum where digit is 1 --> 2^i to get decimal value
+        if(num % 10 != 0) {
+            decimal = decimal + (pow(2,i));
         }
 
-    //print binary num and decimal num
-    printf("Binary number: %d \n", biNum);
-    printf("Decimal number: %d", decNum); 
+        //move to next digit of binary num
+        num = (num / 10);
+    }
+
+    //output
+    printf("number: %d", decimal);
+
+    
 }
