@@ -14,57 +14,63 @@
 int main(void) {
     
     //a)
-    printf("a)\n");
     int x = 6;
     int y = 3;
 
     //original
     bool exA = (!(x < 5) && !(y >= 7));
-    printf("boolean value of original: %d\n", exA); 
 
     //rewrite
     bool valA = !((x < 5) || (y >= 7));
-    printf("Boolean value of rewrite: %d\n", valA);
+
+    //output
+    if(exA == valA) {
+        printf("both expressions for A are equal\n");
+    }
 
     //b)
-    printf("b)\n");
     int a = 1;
     int b = 1;
     int g = 2;
 
     //original
     bool exB = (!(a == b) || !(g != 5));
-    printf("boolean value of original: %d\n", exB);
 
     //rewrite
     bool valB = !((a == b) && (g != 5));
-    printf("boolean value of rewrite: %d\n", valB);
+
+    //output
+    if(exB == valB) {
+        printf("both expressions for B are equal\n");
+    }
 
     //c)
-    printf("c)\n");
-
     int x2 = 9;
     int y2 = 9;
 
     //original 
     bool exC = !((x <= 8) && (y > 4));
-    printf("boolean value of original: %d\n", exC);
 
     //rewrite
     bool valC = (!(x <= 8) || !(y > 4));
-    printf("boolean value of rewrite: %d\n", valC);
+
+    //output
+    if(exC == valC) {
+        printf("both expressions for C are equal\n");
+    }
 
     //d)
-    printf("d)\n");
-
     int i = 3;
     int j = 8;
 
     //original 
     bool exD = !((i > 4) || (j <= 6));
-    printf("boolean value of original: %d\n", exD);
 
     //rewrite
     bool valD = (!(i > 4) && !(j <= 6));
-    printf("boolean value of rewrite: %d\n", valD);
+
+    //output
+    if(exD == valD) {
+        printf("both expressions for D are equal\n");
+    }
 }
