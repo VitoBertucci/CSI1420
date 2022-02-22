@@ -14,24 +14,25 @@ int main(void) {
         //set prime to true
         result = 0;
 
-        //0.02s user 0.00s system 75% cpu 0.034 total using i/2
-        //test for divisors
-        for(int j = 2; j <= i/2; j++) {
+        //test for divisors:
+        /*
+            -if j is less than i/2 (j is < current number/2)
+            -iterate through j
+            -if the current number can be divided by j, the number is not prime, result is not 1
+            -if j iterates through i/2 and the number cannot be divided by any of the j values, break loop
+        */
 
-            //if number is divisible by j with r=0, not prime, make result more than 0
+        //time with (i/2) as ceiling: 0.01s user 0.00s system 55% cpu 0.017 total (faster, more cpu intensive)
+        for(int j = 2; j <= i/2; j++) {
             if (i % j == 0){
-                
                 result++;
                 break;
             }
         }
 
         /*
-        //0.02s user 0.00s system 71% cpu 0.038 total using sqrt(i)
-        //test for divisors
+        //time with sqrt(i) as ceiling: 0.01s user 0.00s system 6% cpu 0.164 total (slower, less cpu intensive)
         for(int j = 2; j <= sqrt(i); j++) {
-
-            //if number is divisible by j with r=0, not prime, make result more than 0
             if (i % j == 0){
                 result++;
                 break;
@@ -44,4 +45,5 @@ int main(void) {
                 printf("%d\n", i);
         }
     }
+    
 }
