@@ -2,13 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
-- write a statement that will print one number from [6,10,14,18,22]
-- find rand() in range [6,22], where dx is 4, n is 5
-- (6,10,14,18,22) = 2(3,5,7,9,11)
-*/
-
 int main(void) {
+    
     //init random
     srand(time(NULL));
     
