@@ -1,13 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-/*
-write a recursive function:
-    returns 1 if string is palindrome
-    returns 0 if not palindrome
-ignores spaces and punctuation
-
-palindrome is word that is same forwards and backworks
-*/
 
 //test if character is letter
 int validChar(char c) {
