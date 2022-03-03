@@ -59,8 +59,8 @@ void palinString(char str[]) {
 }
 
 int main(void) {
-    char ch;
-    char word[] = {0}; //init string
+    //init string char arr
+    char word[] = {0};
 
     //get input string
     scanf("%[^\n]s", word);
@@ -75,7 +75,7 @@ int main(void) {
     printf("Palinfrome: ");
     palinString(word);
 
-    //dont know why segmentation fault
+    //dont know why segmentation fault at 10 chars in array
 
 }
 
