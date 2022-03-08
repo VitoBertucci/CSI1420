@@ -1,49 +1,48 @@
 #include <stdio.h>
 #include <math.h>
 
+//prime test
+int prime(int num) {
+    //set result to 0
+    int result = 0;
+    int count = 1;
+
+    //loop through j/2 and if j fits evenly into num, num is not prime
+    for(int j = 2; j <= sqrt(num); j++) {
+        //add 1 to result if j fits into num evenly
+        if (num % j == 0){
+            result++;
+            break;
+        }
+
+        //increment count for each successfull iteration 
+        count++;
+    }
+
+    //return 0 if prime, return 1 if not prime
+    if(result == 0) {
+        printf("%d\n", num);
+    } 
+
+    //return number of iterations
+    return count;
+}
+
+
 int main(void) {
 
     //init vars
     int result;
-    int i;
-    int j;
+    int count = 0;
 
     //while the number is in range
-    for(i = 1; i <= 10000; i++) {
+    for(int i = 2; i <= 10000; i++) {
 
-        //set prime to true
-        result = 0;
-
-        //test for divisors:
-        /*
-            -if j is less than i/2 (j is < current number/2)
-            -iterate through j
-            -if the current number can be divided by j, the number is not prime, result is not 1
-            -if j iterates through i/2 and the number cannot be divided by any of the j values, break loop
-        */
-
-        //time with (i/2) as ceiling: 0.01s user 0.00s system 55% cpu 0.017 total (faster, more cpu intensive)
-        for(int j = 2; j <= i/2; j++) {
-            if (i % j == 0){
-                result++;
-                break;
-            }
-        }
-
-        /*
-        //time with sqrt(i) as ceiling: 0.01s user 0.00s system 6% cpu 0.164 total (slower, less cpu intensive)
-        for(int j = 2; j <= sqrt(i); j++) {
-            if (i % j == 0){
-                result++;
-                break;
-            }
-        }
-        */
-
-        //if result is 0 and number is not 1, print prime
-        if(result == 0 && i != 1) {
-                printf("%d\n", i);
-        }
+        //test if i is prime, add number of iterations to total iterations
+        count += prime(i);
     }
+
+    //
+    printf("total iterations: %d", count);
     
 }

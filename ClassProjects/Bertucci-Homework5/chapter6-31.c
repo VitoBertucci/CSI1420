@@ -58,7 +58,7 @@ int main(void) {
     //output string
     printf("String to test: %s\n", word);
     //output palindrome test
-    printf("Palinfrome: ");
+    printf("Palindrome: ");
     palinString(word);
     //dont know why segmentation fault at 10 chars in array
 }
