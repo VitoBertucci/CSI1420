@@ -9,6 +9,7 @@
         take remainder as the cents value, dividend as dollar amount
         concat on output
 */
+
 int main(void) {
     //principal is $1000.00 cash so int is 100000
     int p = 100000;

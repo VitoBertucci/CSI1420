@@ -27,39 +27,34 @@ void fixString(char str[]) {
     }
 }
 
-void palinString(char str[]) {
-    //set index for first character
-    int i = 0;
-    //set index for last character
-    int e = strlen(str) -1;
-    //loop comparing first and last char, then 2nd and 2nd to last character
-    while(e > i) {
-        //if the two chars ever dont match, return no
-        if (str[i] != str[e]) {
+void palinString(char str[], int i, int e) {
+    if (e > i) {
+
+        if(str[i] == str[e]) {
+            i + 1;
+            e - 1;
+            palinString(str, i, e);
+        } else {
             printf("NO\n");
             return;
         }
-        //increment values
-        i++;
-        e--;
+        printf("YES\n");
+        return; 
     }
-    //if all chars match, return yes
-    printf("YES\n");
+
+    printf("ERROR\n");
     return;
 }
 
 int main(void) {
     //init string char arr
-    char word[] = {0};
-    //get input string
-    scanf("%[^\n]s", word);
-    //remove spaces and punctuation
+    char word[] = {"A man, a plan, a canal: Panama"};
     fixString(word);
     //output string
     printf("String to test: %s\n", word);
     //output palindrome test
     printf("Palindrome: ");
-    palinString(word);
+    palinString(word, 0, (strlen(word)-1));
     //dont know why segmentation fault at 10 chars in array
 }
 
